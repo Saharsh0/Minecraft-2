@@ -32,7 +32,7 @@ function new_image(get_image)
         block_image_object.scaleToHeight(block_h);
         block_image_object.set({
             top:player_y,
-            top:player_x
+            left:player_x
         });
         canvas.add(block_image_object);
     });
@@ -140,3 +140,50 @@ function my_keydown(e)
         console.log("C")
     }
 }
+
+function up()
+{
+    if(player_y >= 0)
+    {
+        player_y -= block_h
+        console.log("Up" + player_y)
+        canvas.remove(player_object)
+        player_update();
+
+    }
+}
+
+function down()
+{
+   if (player_y <= 500)
+   {
+    player_y += block_h
+    console.log("down" + player_y)
+    canvas.remove(player_object)
+    player_update();
+   }
+}
+
+function right()
+{
+    if (player_x <= 850)
+    {
+        player_x += block_w
+        console.log("right" + player_x)
+        canvas.remove(player_object)
+        player_update();
+    }
+}
+
+function left()
+{
+    if (player_x >= 0)
+    {
+        player_x -= block_w
+        console.log("left" + player_x)
+        canvas.remove(player_object)
+        player_update();
+    }
+}
+
+
